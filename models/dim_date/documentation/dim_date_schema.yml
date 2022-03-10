@@ -1,0 +1,59 @@
+version: 2
+
+models:
+  - name: dim_dates
+    description: '{{ doc("dim_date_description") }}'
+    
+    columns:
+      - name: date
+        description: Primary key for the Dim Dates table that can be used to join to any Fact Table with a date key column. Stored as YYYY-MM-DD.
+        tests:
+          - unique
+          - not_null
+      - name: season
+        description: The Scion property season that the data falls under.
+      - name: year
+        description: The year of the date.
+      - name: month
+        description: The month number of the date.
+      - name: year_month
+        description: The year and month of the date in YYYYMM format.
+      - name: month_name
+        description: The abbreviated month name of the date.
+      - name: day_of_month
+        description: The DD part of the date.
+      - name: day_of_week
+        description: The day of the week in integers that the date falls under.
+      - name: day_name
+        description: The string form of the day of the week.
+      - name: season_start
+        description: Day that the date's season begins.
+      - name: season_end
+        description: Day that the date's season ends.
+      - name: day_of_season
+        description: Can be used to determine how many days into the season the date is.
+      - name: week_of_season
+        description: Can be used to determine how many weeks into the season the date is.
+      - name: month_of_season
+        description: Can be used to determine how many months into the season the date is.
+      - name: season_month
+        description: Year and Month of the season in YYYYMM form.
+      - name: week_of_year
+        description: Tracks which week of the year the date falls under.
+      - name: academic_year
+        description: Represents the academic year for the season.
+      - name: is_month_end
+        description: Identifies if the date is the last day of the month.
+      - name: prelease_no_show_inclusion
+        description: Custom flag that helps determine if a date should be excluded from analysis.
+      - name: jan_prelease_no_show_inclusion
+        description: Custom flag that helps determine if a date should be excluded from analysis.
+      - name: may_prelease_no_show_inclusion
+        description: Custom flag that helps determine if a date should be excluded from analysis.
+      - name: is_unknown_record
+        description: Identifies if the date row was created to serve as an "Unknown" record for joins to fact tables where there is no known date key. 1 = TRUE and 0 = FALSE
+        tests:
+          - not_null
+          - accepted_values:
+              values: [1, 0]
+              quote: false

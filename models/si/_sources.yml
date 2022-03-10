@@ -1,0 +1,12 @@
+version: 2
+
+sources:
+  - name: si
+    database: raw
+    schema: scion_intelligence
+    loaded_at_field: updated_at
+    tables:
+      - name: addresses
+      - name: entrata_properties
+      - name: markets
+      - name: properties

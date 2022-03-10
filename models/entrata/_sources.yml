@@ -1,0 +1,19 @@
+version: 2
+
+sources:
+  - name: entrata
+    database: raw
+    schema: entrata
+    tables:
+      - name: application_stages
+      - name: application_statuses
+      - name: cached_applications
+      - name: customer_addresses
+      - name: customer_types
+      - name: customers
+      - name: lease_customers
+      - name: lease_interval_types
+      - name: lease_intervals
+      - name: lease_status_types
+      - name: leases
+      - name: unit_spaces
