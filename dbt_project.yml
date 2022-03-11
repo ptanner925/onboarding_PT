@@ -41,3 +41,7 @@ models:
       schema: public
     si:
       schema: si
+    fact_contract:
+    schema: transform
+    
+    
