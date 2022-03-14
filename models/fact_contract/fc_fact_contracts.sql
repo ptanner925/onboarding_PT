@@ -8,7 +8,7 @@ outputs such as the keys,dates, and measures.
 --us.deleted_on filter removes void leases
 with current_beds_leased as (
   select us.current_lease_id as lease_id, count(*) as beds_leased from {{ ref('ent_unit_spaces') }} us where us.deleted_on is null group by 1
-)
+),
 --sp.subject provides a filter for properties currently owned by scion from
 
 contracts_prep as (
@@ -20,7 +20,7 @@ inner join {{ ref('si_entrata_properties') }} ep on ep.entrata_id = ca.property_
 inner join {{ ref('si_properties') }} sp on sp.id = ep.property_id
 left join current_beds_leased cbl on cbl.lease_id = ca.lease_id
 where sp.subject = 1
-)
+),
 
 contracts_final as (
 select md5(cp.lease_interval_id) as contract_key,
