@@ -3,3 +3,4 @@
 select
   *
 from {{ ref('fc_fact_contracts') }}
+
