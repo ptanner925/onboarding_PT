@@ -47,5 +47,7 @@ models:
       schema: transform
     dim_contracts:
       schema: transform
+    dim_customers:
+      schema: transform
 
     
