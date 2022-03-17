@@ -43,11 +43,13 @@ models:
       schema: public
     si:
       schema: si
-    fact_contracts:
+    fact_contract:
       schema: transform
     dim_contracts:
       schema: transform
     dim_customers:
+      schema: transform
+    dim_properties:
       schema: transform
 
     
