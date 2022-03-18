@@ -9,7 +9,7 @@ with dim_contracts_prep as (
         eca.is_deleted AS is_deleted,
         0 as is_unknown_record
     FROM {{ ref('ent_cached_applications') }} eca 
-    LEFT JOIN {{ ref('ent_lease_interval_types') }} elit ON 
+    INNER JOIN {{ ref('ent_lease_interval_types') }} elit ON 
         elit.id = eca.lease_interval_type_id
     LEFT JOIN {{ ref('ent_lease_status_types') }} elst ON 
         elst.id = eca.lease_status_type_id

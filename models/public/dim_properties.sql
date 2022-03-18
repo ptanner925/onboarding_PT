@@ -1,4 +1,4 @@
-{{ config(materialized='table', tags=['dim_properties']) }}
+{{ config(materialized='table', tags=['fact_contracts']) }}
 
 select 
   * 

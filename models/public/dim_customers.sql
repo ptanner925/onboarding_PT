@@ -1,5 +1,5 @@
 
-{{ config(materialized = 'table', tags = ['dim_customers']) }}
+{{ config(materialized = 'table', tags = ['fact_contracts']) }}
 
 select * from {{ ref('dc_dim_customers') }}
 
