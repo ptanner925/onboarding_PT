@@ -2,7 +2,9 @@
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
 name: "scion_dw_sandbox"
-version: "1.0"
+version: "2.0"
+
+config-version: 2
 
 # This setting configures which "profile" dbt uses for this project. Profiles contain
 # database connection information, and should be configured in the  ~/.dbt/profiles.yml file
@@ -41,3 +43,13 @@ models:
       schema: public
     si:
       schema: si
+    fact_contract:
+      schema: transform
+    dim_contracts:
+      schema: transform
+    dim_customers:
+      schema: transform
+    dim_properties:
+      schema: transform
+
+    

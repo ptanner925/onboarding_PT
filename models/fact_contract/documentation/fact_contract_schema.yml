@@ -1,0 +1,43 @@
+version: 2
+
+models:
+  - name: fact_contracts
+    description: '{{ doc("fact_contract_description") }}'
+
+
+    columns:
+      - name: contract_key
+        description: Used as the foreign key to create a relationship with Dim Properties.
+        tests:
+          - not_null
+          - unique
+          - relationships:
+              to: ref('dim_contracts')
+              field: contract_key
+      - name: property_key
+        description: Used as the foreign key to create a relationship with Dim Properties.
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_properties')
+              field: property_key
+      - name: customer_key
+        description: Used as the foreign key to create a relationship with Dim Customers.
+        tests:
+          - relationships:
+              to: ref('dim_customers')
+              field: customer_key
+      - name: lease_start_date_key
+        description: Used as a foreign key to create a relationship with Dim Dates. The column is stored as YYYY-MM-DD.
+        tests:
+          - relationships:
+              to: ref('dim_dates')
+              field: date
+      - name: lease_end_date_key
+        description: Used as a foreign key to create a relationship with Dim Dates. The column is stored as YYYY-MM-DD.
+        tests:
+          - relationships:
+              to: ref('dim_dates')
+              field: date
+      - name: beds_leased
+        description: The number of beds leased for that record. Can be null because not all applications become leases.
