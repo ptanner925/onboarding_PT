@@ -3,7 +3,7 @@ with unknown_property_record as (
     select
     '-1' as property_key,
     -1 as property_id,
-    -1 as property_code,
+    'Unknown' as property_code,
     -1 as market_id,
     'Unknown' as market_name,
     'Unknown' as street_address,
